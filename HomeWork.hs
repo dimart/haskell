@@ -37,7 +37,7 @@ isPrime a | a <= 0         = error "isPrime: Non-positive argument"
           | otherwise      = prime 2 a where
  prime d a | d * d > a       = True
            | a `mod` d == 0  = False
- 	       | otherwise       = prime (d+1) a
+ 	   | otherwise       = prime (d+1) a
 
 --McCarthy 91 function
 m91 :: Integer -> Integer
