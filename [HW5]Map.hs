@@ -21,10 +21,10 @@ balance m@(M height pair@(k, v) l r)
 	| h r == h l + 1 = make pair l r
 	| otherwise      = m
 	where 
-		  rotR p (M _ p' ll lr) r = if h ll < h lr then rotR p  (rotL p' ll lr)  r
-		  					   else make p' ll               (make p lr r  )  
-		  rotL p l (M _ p' rl rr) = if h rl > h rr then rotL p  l                (rotR p' rl rr)             
-		  					   else make p' (make p  l  rl)  rr
+	      rotR p (M _ p' ll lr) r = if h ll < h lr then rotR p  (rotL p' ll lr)  r
+							 else make p' ll               (make p lr r  )  
+	      rotL p l (M _ p' rl rr) = if h rl > h rr then rotL p  l                (rotR p' rl rr)             
+                                                         else make p' (make p  l  rl)  rr
 ------------------------------------------------------------------------------------------------
 
 emptyMap = E
@@ -46,8 +46,8 @@ remove m@(M  ht pair@(k, vs)  l  r) k'
         |k' < k    = balance $ make pair (remove l k') r
         |k' > k    = balance $ make pair (remove r k') l
         |otherwise = case vs of
-        	     	[v]   -> remNode m
-        	     	v:vs' -> (M ht (k, vs') l r) 
+			[v]   -> remNode m
+			v:vs' -> (M ht (k, vs') l r) 
 
 remNode (M _ _ E E) = E
 remNode (M _ _ l E) = l
