@@ -22,9 +22,9 @@ balance m@(M height pair@(k, v) l r)
 	| otherwise      = m
 	where 
 	      rotR p (M _ p' ll lr) r = if h ll < h lr then rotR p  (rotL p' ll lr)  r
-							 else make p' ll               (make p lr r  )  
-	      rotL p l (M _ p' rl rr) = if h rl > h rr then rotL p  l                (rotR p' rl rr)             
-                                                         else make p' (make p  l  rl)  rr
+						       else make p' ll (make p lr r  )  
+	      rotL p l (M _ p' rl rr) = if h rl > h rr then rotL p  l (rotR p' rl rr)             
+                                                       else make p' (make p  l  rl)  rr
 ------------------------------------------------------------------------------------------------
 
 emptyMap = E
