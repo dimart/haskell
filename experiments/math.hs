@@ -25,7 +25,7 @@ fib3 n = fib' 1 0 0 1 n
 					    ( (square p) + (square q) ) 
 					    ( (square q) + (2*p*q)) 
 					    (count `div` 2)
-	 	| otherwise          = fib' ((b * q) + (a * q) + (a * p)) 
+	        | otherwise          = fib' ((b * q) + (a * q) + (a * p)) 
 	 				    ((b * p) + (a * q)) 
 	 				    p 
 	 				    q 
