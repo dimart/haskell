@@ -54,4 +54,4 @@ expt3 b n
 	| n `mod` 2 == 0  = square $ expt3 b (n `div` 2)
 	| otherwise       = b * (expt3 b (n-1))
 	where 
-		square x = x * x
+		square x = x * x 
